@@ -1,68 +1,83 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Breeder Database
 
-## Available Scripts
+####What is the purpose of this app?
+To give potential puppy parents a starting point in finding and researching breeders for them to choose from. Allows for clear-cut comparisons of breeders and what procedures they abide by in their breeding programs. 
+####What problems does your app solve and how does it solve those problems?
+The messiness of finding a breeder when you have no connections to reference. Most breeders websites are slapped together in a simplified program, outdated or both. This site would allow users to create an account, and if they are a breeder enter pre-determined information that can then be compared to other breeders for buyers to look through. 
+####Who is your target user?
+Any and all potential pet parents. Teens to seniors and everything in between. Education and functionality are priority as the site has to be accessible for all ages. 
+####How much experience do they have with technology?
+Assumed little to none. 
 
-In the project directory, you can run:
+###Features:
+Welcoming home page with simple instructions on how to get the most of the site. 
+Breeders can register, and are provided multiple fields about their program and practices (titles, # of dogs in program, hip/elbow certs, breed specific testing, etc)
 
-### `npm start`
+###For buyers/users:
+- Ability to search breeders by breed/region. 
+- Add functionality of users to create an account.
+- Ability to add breeders to a list on their account so they can be saved for further research.
+- Reviews available on each breeder page, along with a rating/review count on their search card. 
+- Ability to narrow search results based on region/state, titles, registered dogs(all registries) and buyer rating. Breed being the initial parameter for searches. 
+ 
+###For breeders:
+- All buyer functionality.
+- Ability to edit their information and respond to reviews on their page. 
+- Ability to report reviews to admins to address any spamming/slander.
+- Ability to link to their website/ social media on their page. 
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+###MVP(Minimum Viable Product):
+- Login/Register functionality
+- Search within specified breed
+- User/breeder page 
+- Ability to narrow search results with specified parameters.
+ 
+###Components:
+- App.js
+- Header.js
+	- Functional w/Hooks.
+- Auth.js
+	- Functional w/Hooks.
+- Dashboard.js
+	- Functional w/Hooks
+- Results.js
+	- Functional w/Hooks
+- Userpage.js 
+    - Functional w/Hooks
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- Routes:
+```jsx
+    <Route exact path='/' component={Dashboard}/>
+    <Route path='/auth' component={Auth}/>
+    <Route path='/results' component={Results}/>
+    <Route path='/user${userId}' component={Userpage}/>
+```
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+###Server:
+- Controllers:
+    - register - (body)
+    - login - (body)
+    - logout
 
-### `npm run build`
+    - search - (body, query) - get all matching data from the db and send to front end for user display.
+    - editProfile - (params, body (maybe query to see if breeder=true?)) - ability to edit something on the user profile. 
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Endpoints:
+    - Auth:
+        - app.post(‘/api/register’, authCtrl.register)
+        - app.post(‘/api/login’ , authCtrl.login)
+        - app.delete(‘/api/logout’ , authCtrl.logout)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+    - App:
+        - app.get(‘/api/search’ , ctrl.search )
+        - app.put(‘/api/:user_id’ , ctrl.editProfile )
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+####Point Plan: 
+- Hosted with unique username (10)
+- Additional tech- Sass & Nodemailer (15-30)
+- Functioning Auth (10)
+- Hooks on 5 components (10)
+- 3 responsive views (10)
+- Redux- read/write from 2+ reducers (15)
+    - Total: 70 Points+
