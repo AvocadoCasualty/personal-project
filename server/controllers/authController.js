@@ -4,7 +4,7 @@ module.exports = {
     register: async (req, res) => {
         const db = req.app.get('db');
         const {username, password, email} = req.body
-        const profile_pic = require('../../Ahsokaderp.jpg')
+        // const profile_pic = require('../../Ahsokaderp.jpg')
 
         const existingUser = await db.check_user(username);
         if (existingUser[0]) {
@@ -14,7 +14,7 @@ module.exports = {
         const salt = bcrypt.genSaltSync(10)
         const hash = bcrypt.hashSync(password, salt)
 
-        const newUser = await db.register_user([username, hash, email, profile_pic])
+        const newUser = await db.register_user([username, hash, email])
         delete newUser[0].hash
         req.session.user = newUser[0]
         return res.status(200).send(req.session.user)
