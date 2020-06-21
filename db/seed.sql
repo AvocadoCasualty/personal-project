@@ -8,7 +8,7 @@ create table user_info(
 
 Create table states(
 	state_id serial primary key,
-	region_code int,
+	region_code varchar(30),
 	state_name varchar(30)
 	);
 
@@ -33,3 +33,19 @@ create table kennel_info(
     user_bio varchar(1000)
 	);
 
+insert into states (region_code, state_name)
+values
+('Southeast','Alabama'),
+('Noncontiguous', 'Alaska'),
+('Southwest','Arizona');
+
+insert into breeds (breed_name, working_variation, show_variation)
+values ('Doberman Pinscher', true, true),
+('Dutch Shepherd', true, false),
+('Belgian Malinois', true, true),
+('German Shepherd', true, true),
+('Great Dane', true, true);
+
+
+INSERT INTO kennel_info (user_id, kennel_name, state_id, breed_id, registered_dogs, registry, female_dogs, male_dogs, breed_tests, user_bio)
+VALUES (1, 'Delightful Dobies', 3, 59, true, 'AKC', 1, 1, true, 'Interesting bio stuff');

@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express'),
     session = require('express-session'),
     massive = require('massive'),
-    // ctrl = require('./controllers/controller'),
+    ctrl = require('./controllers/controller'),
     authCtrl = require('./controllers/authController');
 const {SESSION_SECRET, SERVER_PORT, CONNECTION_STRING} = process.env;
 
@@ -23,6 +23,7 @@ app.post('/api/login', authCtrl.login)
 app.delete('/api/logout', authCtrl.logout)
 
 //app endpoints
+app.get('/api/user/:user_id', ctrl.getUserpage)
 // app.get('/api/search', ctrl.search)
 // app.put('/api/:user_id', ctrl.editProfile)
 
