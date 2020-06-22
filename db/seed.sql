@@ -4,6 +4,8 @@ create table user_info(
 	email varchar(30),
 	password text,
 	profile_pic text
+	state_id int references states(state_id)
+	breed_id int references breeds(breed_id)
 	);
 
 Create table states(

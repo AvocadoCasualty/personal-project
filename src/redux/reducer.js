@@ -6,7 +6,6 @@ const LOGIN_USER = 'LOGIN_USER';
     // LOGOUT_USER = 'LOGOUT_USER';
 
 export function loginUser(user) {
-    console.log(user, 'this is the user')
     return {
         type:LOGIN_USER,
         payload: user
