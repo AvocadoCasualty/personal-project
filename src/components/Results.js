@@ -1,5 +1,5 @@
 import React from 'react';
-// import './Results.scss';
+// import './_Results.scss';
 
 function Results() {
     return (

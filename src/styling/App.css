@@ -1,0 +1,73 @@
+.Auth {
+  height: 80vh; }
+
+.Header {
+  height: 10vh;
+  width: 100%;
+  background-color: deepskyblue;
+  display: flex;
+  justify-content: space-around; }
+
+.logo-pic {
+  height: 50px;
+  width: 50px; }
+
+.auth-link, button {
+  font-family: 'Exo', sans-serif;
+  font-size: 16px;
+  text-decoration: none;
+  background-color: dimgrey;
+  color: white;
+  border-radius: 2px;
+  padding: 1px 2px;
+  margin: 3px;
+  border: black 1px solid; }
+  .auth-link:hover, button:hover {
+    background-color: #8ffd60; }
+
+.user-div input {
+  margin: 5px; }
+
+.login-div {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap; }
+
+/* ====================== Desktop Only (Overrides Mobile and Tablet Styles) ========================== */
+@media only screen and (min-width: 1200px) {
+  .Header {
+    height: 17vh;
+    display: flex;
+    justify-content: space-between; }
+  .logo-pic {
+    height: 100px;
+    width: 100px; }
+  .user-div {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap; } }
+
+/*end media query*/
+/*End desktop only styles*/
+.website-icon, .fb-icon, .ig-icon, .twitter-icon {
+  height: 30px;
+  width: 30px; }
+
+/* ====================== Mobile Portrait and Up ========================== */
+.App {
+  width: 100vw;
+  text-align: center;
+  background-color: dimgrey;
+  height: 100vh;
+  font-family: 'Exo', sans-serif; }
+
+/*End mobile and up styles*/
+/* ====================== Tablet Portrait and Up (Overrides Mobile Styles) ========================== */
+/*end media query*/
+/*End tablet and up styles*/
+/* ====================== Tablet Landscape and Up (Overrides Mobile and Tablet Portrait Styles) ========================== */
+/*end media query*/
+/*End landscape tablet and up styles*/
+/* ====================== Desktop Only (Overrides Mobile and Tablet Styles) ========================== */
+/*end media query*/
+/*End desktop only styles*/

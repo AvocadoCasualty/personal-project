@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-
+import '../styling/_Auth.scss'
 import {useDispatch} from "react-redux";
 import {loginUser} from "../redux/reducer";
 import axios from 'axios';
@@ -24,13 +24,26 @@ function Auth() {
 
     return (
         <div className="Auth">
-            <form onSubmit={register}>
-                <input placeholder='username' name='username' value={username} onChange={(e)=> setUsername(e.target.value)}/>
-                <input placeholder='password' name='password' value={password} onChange={(e) => setPassword(e.target.value)}/>
-                <input placeholder='email' name='email' value={email} onChange={(e) => setEmail(e.target.value)}/>
-                <button type='submit'>Register</button>
-            </form>
-            <p>Text here so I can see what I'm doing</p>
+            <h2>Breeder Registration:</h2>
+
+            <p>Please complete the fields below!</p>
+            <div>
+                <form onSubmit={register}>
+                    <p>Username: </p>
+                    <input placeholder='username' name='username' value={username}
+                           onChange={(e) => setUsername(e.target.value)}/>
+                    <br/>
+                    <p>Password:</p>
+                    <input placeholder='password' name='password' value={password}
+                           onChange={(e) => setPassword(e.target.value)}/>
+                    <br/>
+                    <p>E-Mail:</p>
+                    <input placeholder='email' name='email' value={email} onChange={(e) => setEmail(e.target.value)}/>
+                    <br/>
+                    <button type='submit'>Register</button>
+                </form>
+            </div>
+
         </div>
     );
 }

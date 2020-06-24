@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt')
 module.exports = {
     register: async (req, res) => {
         const db = req.app.get('db');
+        const transporter = req.app.get('transporter');
         const {username, password, email} = req.body
 
         const existingUser = await db.check_user(username);
@@ -15,6 +16,14 @@ module.exports = {
 
         const newUser = await db.register_user([username, hash, email])
         await db.create_kennel(newUser[0].user_id)
+        const sendEmail = {from: 'SomewhereImportant@totallylegit.com', to:email, subject:'Welcome to ', html:''}
+        transporter.sendMail( sendEmail ,(error, data) => {
+            if(error) {
+                console.log(error)
+            } else {
+                console.log('Email sent!', data)
+            }
+        })
         delete newUser[0].hash
         req.session.user = newUser[0]
         return res.status(200).send(req.session.user)

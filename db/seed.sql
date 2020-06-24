@@ -4,8 +4,6 @@ create table user_info(
 	email varchar(30),
 	password text,
 	profile_pic text
-	state_id int references states(state_id)
-	breed_id int references breeds(breed_id)
 	);
 
 Create table states(
@@ -34,6 +32,12 @@ create table kennel_info(
 	breed_tests boolean,
     user_bio varchar(1000)
 	);
+
+alter table user_info
+    add column facebook varchar(200),
+    add column instagram varchar(200),
+    add column twitter varchar(200),
+    add column website varchar(200);
 
 insert into states (region_code, state_name)
 values

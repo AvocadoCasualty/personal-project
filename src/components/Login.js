@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import {useDispatch} from "react-redux";
 import {loginUser} from "../redux/reducer";
 import axios from 'axios';
+import {Link} from "react-router-dom";
 
 
 function Login() {
@@ -20,13 +21,19 @@ function Login() {
             <input
                 name={username}
                 value={username}
+                placeholder='Username'
                 onChange={(e) => setUsername(e.target.value)}/>
+                <br/>
             <input
                 name={password}
                 value={password}
+                placeholder='Password'
                 type='password'
                 onChange={(e)=> setPassword(e.target.value)}/>
+                <br/>
             <button onClick={login}>Login</button>
+            <Link to={'/Auth'} className='auth-link'>Register</Link>
+
         </div>
     );
 }

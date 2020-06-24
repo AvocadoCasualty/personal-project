@@ -1,0 +1,43 @@
+@import "Auth";
+@import "Dashboard";
+@import "Header";
+@import "Results";
+@import "Userpage";
+
+
+/* ====================== Mobile Portrait and Up ========================== */
+.App {
+  width: 100vw;
+  text-align: center;
+  background-color: dimgrey;
+  height: 100vh;
+  font-family: 'Exo', sans-serif;
+}
+
+/*End mobile and up styles*/
+
+
+/* ====================== Tablet Portrait and Up (Overrides Mobile Styles) ========================== */
+@media only screen and (min-width: 768px) {
+
+}
+
+/*end media query*/
+
+/*End tablet and up styles*/
+
+/* ====================== Tablet Landscape and Up (Overrides Mobile and Tablet Portrait Styles) ========================== */
+@media only screen and (min-width: 992px) {
+
+}
+
+/*end media query*/
+/*End landscape tablet and up styles*/
+
+
+/* ====================== Desktop Only (Overrides Mobile and Tablet Styles) ========================== */
+@media only screen and (min-width: 1200px) {
+
+}
+/*end media query*/
+/*End desktop only styles*/

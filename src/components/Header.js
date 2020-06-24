@@ -1,13 +1,12 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-import '../styling/Header.scss';
-import logoPic from '../doglogo.png';
+import '../styling/_Header.scss';
+import logoPic from '../icons/doglogo.png';
 import {useDispatch, useSelector} from "react-redux";
 import Login from "./Login";
 import axios from 'axios';
 import {loginUser} from "../redux/reducer";
 import {useHistory} from 'react-router-dom';
-
 
 
 function Header() {
@@ -21,22 +20,28 @@ function Header() {
             history.push('/dashboard')
         })
     }
+
+
     return (
         <div className="Header">
             <div className='logo-pic-div'>
                 <img src={logoPic} className='logo-pic' alt='logo-pic'/>
             </div>
             <div className='links'>
-                <Link to={'/Dashboard'}>Dashboard</Link>
+                <Link to={'/Dashboard'}>Home</Link>
                 {/*<Link to={'/Dashboard'}>Dashboard</Link>*/}
-                </div>
+            </div>
+            <div className='text-div'>
+                <h2>Reputable Rover Resource</h2>
+
+            </div>
             <div className='user-div'>
                 {state.user ? <div>
                     <Link to={`/user/${state.user.user_id}`}>{state.user.username}</Link>
                     {state.user.profile_pic}
                     <button onClick={logout}>Logout</button>
-                </div> : <div>
-                    <Login/> <Link to={'/Auth'} className='auth-link'>Register</Link>
+                </div> : <div className='login-div'>
+                    <Login/>
                 </div>}
 
             </div>

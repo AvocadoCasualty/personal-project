@@ -3,8 +3,9 @@ const express = require('express'),
     session = require('express-session'),
     massive = require('massive'),
     ctrl = require('./controllers/controller'),
-    authCtrl = require('./controllers/authController');
-const {SESSION_SECRET, SERVER_PORT, CONNECTION_STRING} = process.env;
+    authCtrl = require('./controllers/authController'),
+    nodemailer=require('nodemailer')
+const {SESSION_SECRET, SERVER_PORT, CONNECTION_STRING, EMAIL, PASSWORD} = process.env;
 
 const app = express();
 
@@ -16,6 +17,14 @@ app.use(session({
         secret: SESSION_SECRET
     })
 );
+const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+        user: EMAIL,
+        pass: PASSWORD
+    }
+})
+app.set('transporter', transporter)
 
 // auth endpoints
 app.post('/api/register', authCtrl.register)
