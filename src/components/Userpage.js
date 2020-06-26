@@ -14,7 +14,7 @@ function Userpage() {
     const [userpage, setUserpage] = useState({});
     const [editing, setEditing] = useState(false)
     const params = useParams();
-    const state = useSelector((reduxState) => reduxState)
+    const state = useSelector(({reducer}) => reducer)
 
     useEffect(() => {
         // console.log(params, 'params')
@@ -22,23 +22,37 @@ function Userpage() {
             .catch(error => console.log(error))
     }, [params])
 
-    // console.log(userpage)
+    const saveData = () => {
+        setEditing(false);
+        axios.put(`/api/${userpage.kennel_id}`, userpage)
+            .then()
+            .catch(error => console.log(error))
+    }
+    const handleChange = (e) => {
+       const {name, value} = e.target
+        setUserpage({...userpage, [name]:value})
+    }
+
+    console.log(userpage)
     return (
         <div className="Userpage">
             <div>
-                {state.user && userpage.user_id === state.user.user_id && (
-                    <div>
-                        <button onClick={() => setEditing(!editing)}>{editing ? "Cancel" : "Edit"}</button>
-                    </div>)}
                 {editing ? (<div>
                     {/*editing input fields*/}
+                    <div className='editKennel'>
+                        <span>Kennel Name: </span>
+                        <input name='kennel_name' value={userpage.kennel_name} onChange={(e) => setUserpage({...userpage, kennel_name:e.target.value})}/>
+                        <span>User Bio: </span>
+                        <textarea className='user-bio' name='user_bio' value={userpage.user_bio} onChange={handleChange}/>
+                    </div>
 
-                    <button onClick={() => setEditing(false)}>Save(butnotreally)</button>
+                    <button onClick={() => saveData()}>Save</button>
                 </div>) : (<div>
                     {/*display user data*/}
                     <div className='kennel-info' key={userpage.kennel_id}>
                         <h2>{userpage.kennel_name}</h2>
                         <div> About us:
+                            <br/>
                             <span>{userpage.user_bio} </span>
                         </div>
                         <ul>
@@ -69,11 +83,12 @@ function Userpage() {
                             </div>
                         </div>
                     </div>
-
-
                 </div>)}
-
             </div>
+            {state.user && userpage.user_id === state.user.user_id && (
+                <div>
+                    <button onClick={() => setEditing(!editing)}>{editing ? "Cancel" : "Edit Information"}</button>
+                </div>)}
         </div>
     );
 }

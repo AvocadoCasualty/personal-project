@@ -16,12 +16,12 @@ module.exports = {
 
         const newUser = await db.register_user([username, hash, email])
         await db.create_kennel(newUser[0].user_id)
-        const sendEmail = {from: 'SomewhereImportant@totallylegit.com', to:email, subject:'Welcome to ', html:''}
+        const sendEmail = {from: 'SomewhereImportant@totallylegit.com', to:email, subject:'Welcome to Reputable Rover Resource', html:''}
         transporter.sendMail( sendEmail ,(error, data) => {
             if(error) {
                 console.log(error)
             } else {
-                console.log('Email sent!', data)
+                console.log('Email sent!')
             }
         })
         delete newUser[0].hash

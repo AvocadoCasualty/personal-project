@@ -10,7 +10,7 @@ import {useHistory} from 'react-router-dom';
 
 
 function Header() {
-    const state = useSelector((reduxState) => reduxState)
+    const state = useSelector(({reducer}) => reducer)
     const dispatch = useDispatch()
     const history = useHistory()
 
@@ -28,7 +28,7 @@ function Header() {
                 <img src={logoPic} className='logo-pic' alt='logo-pic'/>
             </div>
             <div className='links'>
-                <Link to={'/Dashboard'}>Home</Link>
+                <Link to={'/'}>Home</Link>
                 {/*<Link to={'/Dashboard'}>Dashboard</Link>*/}
             </div>
             <div className='text-div'>
@@ -38,7 +38,6 @@ function Header() {
             <div className='user-div'>
                 {state.user ? <div>
                     <Link to={`/user/${state.user.user_id}`}>{state.user.username}</Link>
-                    {state.user.profile_pic}
                     <button onClick={logout}>Logout</button>
                 </div> : <div className='login-div'>
                     <Login/>

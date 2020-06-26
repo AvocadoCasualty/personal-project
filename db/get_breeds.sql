@@ -1,0 +1,1 @@
+select b.breed_name, b.breed_id from breeds b;

@@ -33,8 +33,10 @@ app.delete('/api/logout', authCtrl.logout)
 
 //app endpoints
 app.get('/api/user/:user_id', ctrl.getUserpage)
-// app.get('/api/search', ctrl.search)
-// app.put('/api/:user_id', ctrl.editProfile)
+app.get('/api/breeds', ctrl.getBreeds)
+app.get('/api/states', ctrl.getStates)
+app.get('/api/search', ctrl.search)
+app.put('/api/:kennel_id', ctrl.editProfile)
 
 massive({
     connectionString: CONNECTION_STRING,

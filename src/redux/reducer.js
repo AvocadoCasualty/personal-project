@@ -17,6 +17,6 @@ export default function (state = initialState, action) {
         case LOGIN_USER:
             return {...state, user:action.payload}
         default:
-            return initialState
+            return state
     }
 }

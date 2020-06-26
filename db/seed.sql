@@ -41,12 +41,14 @@ alter table user_info
 
 insert into states (region_code, state_name)
 values
+('No Region Selected', 'No State Selected')
 ('Southeast','Alabama'),
 ('Noncontiguous', 'Alaska'),
 ('Southwest','Arizona');
 
 insert into breeds (breed_name, working_variation, show_variation)
-values ('Doberman Pinscher', true, true),
+values ('No Breed Selected', false, false),
+('Doberman Pinscher', true, true),
 ('Dutch Shepherd', true, false),
 ('Belgian Malinois', true, true),
 ('German Shepherd', true, true),

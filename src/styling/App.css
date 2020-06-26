@@ -1,6 +1,25 @@
 .Auth {
   height: 80vh; }
 
+.bgimage {
+  width: 100%; }
+
+.container {
+  position: relative; }
+
+.dropdowns {
+  width: 320px;
+  height: 420px;
+  background: #4b4442;
+  opacity: 90%;
+  color: white;
+  box-sizing: border-box;
+  padding: 70px 30px;
+  border-radius: 2px;
+  position: absolute;
+  top: 50px;
+  left: 50px; }
+
 .Header {
   height: 10vh;
   width: 100%;

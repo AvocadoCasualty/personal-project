@@ -1,0 +1,22 @@
+
+.bgimage {
+  width: 100%;
+  //object-fit: cover;
+}
+.container {
+  position: relative;
+}
+.dropdowns {
+  width: 320px;
+  height: 420px;
+  background: #4b4442;
+  opacity: 90%;
+  color: white;
+  //transform: translate(-50%,-50%);
+  box-sizing: border-box;
+  padding: 70px 30px;
+  border-radius: 2px;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}
