@@ -2,24 +2,56 @@
   height: 80vh; }
 
 .bgimage {
-  width: 100%; }
+  width: 100%;
+  height: 98vh;
+  object-fit: cover; }
 
 .container {
   position: relative; }
 
 .dropdowns {
-  width: 320px;
-  height: 420px;
-  background: #4b4442;
-  opacity: 90%;
+  width: 280px;
+  height: 320px;
+  background: rgba(75, 68, 66, 0.8);
+  opacity: 80%;
   color: white;
   box-sizing: border-box;
-  padding: 70px 30px;
+  padding: 55px 30px;
   border-radius: 2px;
   position: absolute;
-  top: 50px;
-  left: 50px; }
+  margin: 20px;
+  top: 80px;
+  left: 7%;
+  font-size: 26px; }
 
+/* ====================== Desktop Only (Overrides Mobile and Tablet Styles) ========================== */
+@media only screen and (min-width: 1200px) {
+  .container {
+    position: relative; }
+  .dropdowns {
+    width: 320px;
+    height: 420px;
+    background: rgba(75, 68, 66, 0.8);
+    opacity: 80%;
+    color: white;
+    box-sizing: border-box;
+    padding: 55px 30px;
+    border-radius: 2px;
+    position: absolute;
+    top: 100px;
+    left: 40%;
+    font-size: 26px; }
+  .dd-wrapper {
+    padding: 15px 30px 45px; }
+  .dd-list {
+    width: 140px;
+    height: 30px; }
+  .search-btn {
+    padding: 5px 12px;
+    font-size: 26px;
+    margin: 15px; } }
+
+/*end media query*/
 .Header {
   height: 10vh;
   width: 100%;
@@ -42,7 +74,9 @@
   margin: 3px;
   border: black 1px solid; }
   .auth-link:hover, button:hover {
-    background-color: #8ffd60; }
+    background-color: #8ffd60;
+    color: black;
+    font-weight: bold; }
 
 .user-div input {
   margin: 5px; }

@@ -30,6 +30,7 @@ app.set('transporter', transporter)
 app.post('/api/register', authCtrl.register)
 app.post('/api/login', authCtrl.login)
 app.delete('/api/logout', authCtrl.logout)
+app.get('/api/getUser', authCtrl.getUser)
 
 //app endpoints
 app.get('/api/user/:user_id', ctrl.getUserpage)

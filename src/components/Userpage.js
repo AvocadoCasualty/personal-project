@@ -24,6 +24,7 @@ function Userpage() {
 
     const saveData = () => {
         setEditing(false);
+        console.log(userpage)
         axios.put(`/api/${userpage.kennel_id}`, userpage)
             .then()
             .catch(error => console.log(error))

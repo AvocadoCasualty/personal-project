@@ -38,9 +38,9 @@ module.exports = {
     },
     editProfile: async (req, res) => {
         const db = req.app.get('db')
-        const {kennel_name, state_id, breed_id, registered_dogs, registry, female_dogs, male_dogs, breed_tests, user_bio, profile_pic, facebook, instagram, twitter, website} = req.body
-        const {kennel_id } = req.params
+        const {kennel_id, kennel_name, state_id, breed_id, registered_dogs, registry, female_dogs, male_dogs, breed_tests, user_bio, profile_pic, facebook, instagram, twitter, website} = req.body
         const {user_id} = req.session.user
+
 
         await db.update_user(user_id, profile_pic, facebook, instagram, twitter, website)
             .catch(error => console.log(error))

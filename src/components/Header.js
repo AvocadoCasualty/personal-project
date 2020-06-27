@@ -17,7 +17,7 @@ function Header() {
     function logout() {
         axios.delete('/api/logout').then(res => {
             dispatch(loginUser(null));
-            history.push('/dashboard')
+            history.push('/')
         })
     }
 

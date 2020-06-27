@@ -34,7 +34,7 @@ function Dashboard() {
 
         <div className="Dashboard">
             <div className='container'>
-                <img src={bgimage} className='bgimage'/>
+                <img src={bgimage} className="bgimage"/>
 
                 <div className='dropdowns'>
                     <div className="dd-header-title">
@@ -55,7 +55,7 @@ function Dashboard() {
                             </select>
                         </div>
                     </div>
-                    <button onClick={() => push('/results')}>SEARCH!</button>
+                    <button className='search-btn' onClick={() => push('/results')}>Search!</button>
                 </div>
 
             </div>
