@@ -1,5 +1,5 @@
 .Header {
-    height: 10vh;
+    height: 9vh;
     width: 100%;
     background-color: deepskyblue;
     display: flex;
@@ -8,9 +8,10 @@
 .logo-pic {
     height: 50px;
     width: 50px;
+    margin: 3px;
 }
 .links {
-    //display: none;
+    display: none;
 }
 .auth-link, button {
     font-family: 'Exo', sans-serif;
@@ -28,8 +29,11 @@
         font-weight: bold;
     }
 }
-.user-div {
-    //display: none;
+h2 {
+    font-size: 20px;
+}
+.user-div-desktop {
+    display: none;
 }
 .user-div input {
     margin: 5px;
@@ -39,21 +43,26 @@
     align-items: flex-start;
     flex-wrap: wrap;
 }
+
 /* ====================== Desktop Only (Overrides Mobile and Tablet Styles) ========================== */
 @media only screen and (min-width: 1200px) {
     .Header {
-        height: 17vh;
+        height: 11vh;
         display: flex;
         justify-content: space-between;
     }
     .links {
-        //display: flex;
+        display: flex;
     }
     .logo-pic {
         height: 100px;
         width: 100px;
+        margin: 4px;
     }
-    .user-div {
+    h2 {
+        font-size: 32px;
+    }
+    .user-div-desktop {
         display: flex;
         align-items: flex-start;
         flex-wrap: wrap;

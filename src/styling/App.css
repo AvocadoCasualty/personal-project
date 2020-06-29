@@ -32,7 +32,6 @@
     width: 320px;
     height: 420px;
     background: rgba(75, 68, 66, 0.8);
-    opacity: 80%;
     color: white;
     box-sizing: border-box;
     padding: 55px 30px;
@@ -53,7 +52,7 @@
 
 /*end media query*/
 .Header {
-  height: 10vh;
+  height: 9vh;
   width: 100%;
   background-color: deepskyblue;
   display: flex;
@@ -61,7 +60,11 @@
 
 .logo-pic {
   height: 50px;
-  width: 50px; }
+  width: 50px;
+  margin: 3px; }
+
+.links {
+  display: none; }
 
 .auth-link, button {
   font-family: 'Exo', sans-serif;
@@ -78,6 +81,12 @@
     color: black;
     font-weight: bold; }
 
+h2 {
+  font-size: 20px; }
+
+.user-div-desktop {
+  display: none; }
+
 .user-div input {
   margin: 5px; }
 
@@ -89,19 +98,45 @@
 /* ====================== Desktop Only (Overrides Mobile and Tablet Styles) ========================== */
 @media only screen and (min-width: 1200px) {
   .Header {
-    height: 17vh;
+    height: 11vh;
     display: flex;
     justify-content: space-between; }
+  .links {
+    display: flex; }
   .logo-pic {
     height: 100px;
-    width: 100px; }
-  .user-div {
+    width: 100px;
+    margin: 4px; }
+  h2 {
+    font-size: 32px; }
+  .user-div-desktop {
     display: flex;
     align-items: flex-start;
     flex-wrap: wrap; } }
 
 /*end media query*/
 /*End desktop only styles*/
+.each-result {
+  width: 500px;
+  height: 500px;
+  background: rgba(75, 68, 66, 0.8);
+  color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+  padding: 55px 30px;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  font-size: 26px; }
+
+.resultsBG {
+  background-image: url("https://images.unsplash.com/photo-1511732782465-412b656f2291?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
+  width: 100%;
+  height: 98vh;
+  padding: 20px;
+  object-fit: cover; }
+
 .website-icon, .fb-icon, .ig-icon, .twitter-icon {
   height: 30px;
   width: 30px; }

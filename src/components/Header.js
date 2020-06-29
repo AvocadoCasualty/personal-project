@@ -33,18 +33,15 @@ function Header() {
             </div>
             <div className='text-div'>
                 <h2>Reputable Rover Resource</h2>
-
             </div>
-            <div className='user-div'>
+            <div className='user-div-desktop'>
                 {state.user ? <div>
                     <Link to={`/user/${state.user.user_id}`}>{state.user.username}</Link>
                     <button onClick={logout}>Logout</button>
                 </div> : <div className='login-div'>
                     <Login/>
                 </div>}
-
             </div>
-
         </div>
     );
 }

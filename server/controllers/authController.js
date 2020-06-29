@@ -16,7 +16,11 @@ module.exports = {
 
         const newUser = await db.register_user([username, hash, email])
         await db.create_kennel(newUser[0].user_id)
-        const sendEmail = {from: 'SomewhereImportant@totallylegit.com', to:email, subject:'Welcome to Reputable Rover Resource', html:''}
+        const sendEmail = {
+            from: 'SomewhereImportant@totallylegit.com',
+            to:email, subject:'Welcome to Reputable Rover Resource',
+            html:''
+        }
         transporter.sendMail( sendEmail ,(error, data) => {
             if(error) {
                 console.log(error)
@@ -55,7 +59,6 @@ module.exports = {
         res.sendStatus(200)
     },
     getUser: (req, res) => {
-        console.log(req.session.user)
         if (!req.session.user) {
             return res.status(401).send("User not found.")
         }
