@@ -34,7 +34,7 @@ function Dashboard() {
 
         <div className="Dashboard">
             <div className='container'>
-                <img src={bgimage} className="bgimage"/>
+                {/*<img src={bgimage} className="bgimage"/>*/}
 
                 <div className='dropdowns'>
                     <div className="dd-header-title">
