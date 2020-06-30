@@ -38,12 +38,12 @@ function Header() {
                 <div className='logo-pic-div'>
                     <img src={logoPic} className='logo-pic' alt='logo-pic'/>
                 </div>
-                <div className='links'>
-                    <Link to={'/'}>Home</Link>
-                    {/*<Link to={'/Dashboard'}>Dashboard</Link>*/}
-                </div>
                 <div className='text-div'>
                     <h2>Reputable Rover Resource</h2>
+                    <div className='links'>
+                        <Link to={'/'}>Home</Link>
+                        {/*<Link to={'/Dashboard'}>Dashboard</Link>*/}
+                    </div>
                 </div>
                 <div className='user-div-desktop'>
                     {state.user ? <div>

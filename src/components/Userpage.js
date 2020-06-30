@@ -137,7 +137,7 @@ function Userpage() {
                             <br/>
                             <span> Profile Picture URL: </span>
                             <input
-                                name="profile-pic"
+                                name="profile_pic"
                                 value={userpage.profile_pic}
                                 onChange={handleChange}
                             />

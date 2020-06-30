@@ -114,7 +114,8 @@ h2 {
     justify-content: space-between;
     background-color: deepskyblue; }
   .links {
-    display: flex; }
+    display: flex;
+    justify-content: center; }
   .logo-pic {
     height: 100px;
     width: 100px;

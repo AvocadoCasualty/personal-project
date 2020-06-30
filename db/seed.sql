@@ -1,9 +1,9 @@
 create table user_info(
 	user_id serial primary key,
 	username varchar(30),
-	email varchar(30),
+	email varchar(30) default '',
 	password text,
-	profile_pic text
+	profile_pic text default ''
 	);
 
 Create table states(

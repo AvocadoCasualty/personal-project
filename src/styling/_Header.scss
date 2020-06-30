@@ -65,6 +65,7 @@ h2 {
     }
     .links {
         display: flex;
+        justify-content: center;
     }
     .logo-pic {
         height: 100px;
@@ -73,6 +74,9 @@ h2 {
     }
     h2 {
         font-size: 32px;
+    }
+    .Login {
+
     }
     .user-div-desktop {
         display: flex;

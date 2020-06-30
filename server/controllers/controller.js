@@ -40,7 +40,7 @@ module.exports = {
         const db = req.app.get('db')
         const {kennel_id, kennel_name, state_id, breed_id, registered_dogs, registry, female_dogs, male_dogs, breed_tests, user_bio, user_id, profile_pic, facebook, instagram, twitter, website} = req.body
         // const {user_id} = req.session.user
-        console.log(user_id, profile_pic, 'user and pic')
+        // console.log(user_id, profile_pic, 'user and pic')
 
 
         await db.update_user(user_id, profile_pic, facebook, instagram, twitter, website)
@@ -60,7 +60,6 @@ module.exports = {
 
         db.get_user_kennel(+user_id)
             .then((results) => {
-                // console.log(results,"these are the results!")
                 delete results[0].password
                 res.status(200).send(results[0])
 
