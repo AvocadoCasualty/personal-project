@@ -3,7 +3,7 @@ import {useSelector} from "react-redux";
 import axios from 'axios'
 // import './_Results.scss';
 import {useHistory} from 'react-router-dom'
-import resultsBG from "../icons/BC-in-field.jpg"
+
 
 function Results() {
     const {selectedBreed, selectedState} = useSelector(({secondReducer})=> secondReducer)
@@ -20,7 +20,6 @@ function Results() {
     return (
         <div className="Results" >
             <div className='resultsBG'>
-            {/*<img src={resultsBG} className='resultsBG' />*/}
             {kennels[0] ? <div> {kennels.map((e) => {
                 return <div className='each-result' key={e.kennel_id}
                             onClick={() => push(`/user/${e.user_id}`)}>

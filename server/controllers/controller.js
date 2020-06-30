@@ -6,7 +6,7 @@ module.exports = {
 
         db.get_user_kennel(+user_id)
             .then((results) => {
-                // console.log(results,"these are the results!")
+                console.log(results,"these are the results!")
                 delete results[0].password
                 res.status(200).send(results[0])
 
@@ -48,6 +48,22 @@ module.exports = {
             .catch(error => console.log(error))
 
         const results = await db.get_user_kennel(user_id)
-        return res.status(200).send(results)
+        return res.status(200).send(results[0])
+    },
+    updateState: async (req, res) => {
+        const db = req.app.get('db')
+        const {state_id, breed_id, kennel_id} = req.body
+        const {user_id} = req.session.user
+
+        await db.update_dropdowns(kennel_id, state_id, breed_id)
+
+        db.get_user_kennel(+user_id)
+            .then((results) => {
+                // console.log(results,"these are the results!")
+                delete results[0].password
+                res.status(200).send(results[0])
+
+            })
+            .catch(error => res.status(500).send(error))
     }
 }

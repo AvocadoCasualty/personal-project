@@ -38,6 +38,7 @@ app.get('/api/breeds', ctrl.getBreeds)
 app.get('/api/states', ctrl.getStates)
 app.get('/api/search', ctrl.search)
 app.put('/api/:kennel_id', ctrl.editProfile)
+app.put('/api/update', ctrl.updateState)
 
 massive({
     connectionString: CONNECTION_STRING,

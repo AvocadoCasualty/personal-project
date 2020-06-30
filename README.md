@@ -42,7 +42,7 @@ Breeders can register, and are provided multiple fields about their program and 
 	- Functional w/Hooks
 - Results.js
 	- Functional w/Hooks
-- Userpage.js 
+- UserpageOld.js 
     - Functional w/Hooks
 
 - Routes:
@@ -50,7 +50,7 @@ Breeders can register, and are provided multiple fields about their program and 
     <Route exact path='/' component={Dashboard}/>
     <Route path='/auth' component={Auth}/>
     <Route path='/results' component={Results}/>
-    <Route path='/user${userId}' component={Userpage}/>
+    <Route path='/user${userId}' component={UserpageOld}/>
 ```
 
 
