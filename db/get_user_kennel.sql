@@ -1,4 +1,4 @@
-select ui.user_id, ui.username, ui.email, ui.profile_pic, s.region_code, s.state_name, s.state_id, b.breed_id, b.breed_name, b.working_variation, b.show_variation, ki.kennel_id, ki.kennel_name, ki.registered_dogs, ki.registry, ki.female_dogs, ki.male_dogs, ki.breed_tests, ki.user_bio from user_info ui
+select ui.user_id, ui.username, ui.email, ui.profile_pic, ui.facebook, ui.instagram, ui.twitter, ui.website, s.region_code, s.state_name, s.state_id, b.breed_id, b.breed_name, b.working_variation, b.show_variation, ki.kennel_id, ki.kennel_name, ki.registered_dogs, ki.registry, ki.female_dogs, ki.male_dogs, ki.breed_tests, ki.user_bio from user_info ui
 left join kennel_info ki on (ui.user_id = ki.user_id)
 left join breeds b on (ki.breed_id = b.breed_id)
 left join states s on (ki.state_id = s.state_id)

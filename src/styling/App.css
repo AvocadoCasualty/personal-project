@@ -131,52 +131,82 @@ h2 {
 /*end media query*/
 /*End desktop only styles*/
 .each-result {
-  width: 500px;
-  height: 500px;
+  width: 320px;
+  height: 140px;
   background: rgba(75, 68, 66, 0.8);
   color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   box-sizing: border-box;
-  padding: 55px 30px;
-  border-radius: 2px;
+  padding: 10px 15px;
+  border-radius: 5px;
   display: flex;
   justify-content: center;
-  margin: 20px;
-  font-size: 26px; }
+  margin-bottom: 20px;
+  font-size: 16px; }
 
 .resultsBG {
   background-image: url("https://images.unsplash.com/photo-1511732782465-412b656f2291?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
-  width: 98%;
+  width: 100%;
   height: 98vh;
-  padding: 20px;
-  object-fit: cover; }
+  padding-top: 20px;
+  background-position: center; }
 
-.userpage-info {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap; }
+.result-card {
+  width: 200px;
+  height: 320px;
+  box-sizing: border-box;
+  border-radius: 2px;
+  position: absolute;
+  top: 80px;
+  left: 5%; }
 
+/* ====================== Desktop Only (Overrides Mobile and Tablet Styles) ========================== */
+@media only screen and (min-width: 1200px) {
+  .result-card {
+    width: 800px;
+    height: 320px;
+    box-sizing: border-box;
+    border-radius: 2px;
+    position: absolute;
+    top: 135px;
+    left: 12%; }
+  .each-result {
+    width: 70vw;
+    height: 200px;
+    background: rgba(75, 68, 66, 0.8);
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+    border-radius: 2px;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px;
+    font-size: 26px; } }
+
+/*end media query*/
+/*End desktop only styles*/
 .kennel-info {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   font-size: 20px; }
 
-.kennel-pic img {
-  width: 700px;
-  max-height: 500px;
-  padding: 10px;
-  margin: 10px;
-  border: #00bfff solid 3px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); }
+.kennel-pic {
+  height: 200px; }
+  .kennel-pic img {
+    width: 250px;
+    max-height: 200px;
+    padding: 10px;
+    margin: 10px;
+    border: #00bfff solid 3px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    background-color: #858585; }
 
 .kennel-text {
-  width: 700px;
+  background-color: #858585;
   text-align: left;
-  padding: 30px;
-  margin: 20px; }
+  padding: 10px;
+  margin: 15px 5px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); }
 
 .website-icon, .fb-icon, .ig-icon, .twitter-icon {
   height: 40px;
@@ -194,13 +224,43 @@ h2 {
     text-align: center;
     margin: 0px; }
 
+/* ====================== Desktop Only (Overrides Mobile and Tablet Styles) ========================== */
+@media only screen and (min-width: 1200px) {
+  .userpage-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; }
+  .kennel-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    padding: 20px; }
+  .kennel-pic {
+    height: 500px; }
+    .kennel-pic img {
+      width: 700px;
+      max-height: 500px;
+      padding: 15px;
+      margin: 10px; }
+  .kennel-text {
+    width: 700px;
+    text-align: left;
+    padding: 30px;
+    margin: 20px; } }
+
+/*end media query*/
+/*End desktop only styles*/
 /* ====================== Mobile Portrait and Up ========================== */
 .App {
   width: 100vw;
   text-align: center;
   background-color: dimgrey;
-  height: 100vh;
+  height: 100%;
   font-family: 'Exo', sans-serif; }
+  .App h2 {
+    margin: 10px; }
 
 /*End mobile and up styles*/
 /* ====================== Tablet Portrait and Up (Overrides Mobile Styles) ========================== */
@@ -210,5 +270,10 @@ h2 {
 /*end media query*/
 /*End landscape tablet and up styles*/
 /* ====================== Desktop Only (Overrides Mobile and Tablet Styles) ========================== */
+@media only screen and (min-width: 1200px) {
+  .App {
+    width: 100vw;
+    height: 100vh; } }
+
 /*end media query*/
 /*End desktop only styles*/

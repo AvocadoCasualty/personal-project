@@ -10,8 +10,11 @@
   width: 100vw;
   text-align: center;
   background-color: dimgrey;
-  height: 100vh;
+  height: 100%;
   font-family: 'Exo', sans-serif;
+  h2 {
+    margin: 10px;
+  }
 }
 
 
@@ -38,7 +41,10 @@
 
 /* ====================== Desktop Only (Overrides Mobile and Tablet Styles) ========================== */
 @media only screen and (min-width: 1200px) {
-
+  .App {
+    width: 100vw;
+    height: 100vh;
+  }
 }
 /*end media query*/
 /*End desktop only styles*/

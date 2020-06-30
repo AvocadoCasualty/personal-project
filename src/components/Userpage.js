@@ -55,13 +55,13 @@ function Userpage() {
     }
 
     const updateUserpage = ({ data }) => {
-        console.log(data)
+        // console.log(data)
         const { breed_id, breed_name, state_id, state_name, region_code } = data
         setUserpage(data)
         setBreed({ breed_id, breed_name })
         setState({ state_id, state_name, region_code })
     }
-    // console.log(breed, state, 'breed and state')
+    // console.log(userpage,'userpage data')
     return (
         <div className="Userpage">
             <div>
@@ -135,7 +135,7 @@ function Userpage() {
                                 </select>
                             )}
                             <br/>
-                            <span> Profile Picture: </span>
+                            <span> Profile Picture URL: </span>
                             <input
                                 name="profile-pic"
                                 value={userpage.profile_pic}
