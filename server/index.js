@@ -17,6 +17,8 @@ app.use(session({
         secret: SESSION_SECRET
     })
 );
+app.use(express.static(`${__dirname}/../build`));
+
 const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
