@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react"
+import React, {useEffect, useState} from "react"
 import "../styling/_Userpage.scss"
-import { useParams } from "react-router-dom"
+import {useParams} from "react-router-dom"
 import axios from "axios"
-import { useSelector } from "react-redux"
+import {useSelector} from "react-redux"
 import websiteIcon from "../icons/world.png"
 import fbIcon from "../icons/facebook.png"
 import igIcon from "../icons/instagram.png"
@@ -16,7 +16,7 @@ function Userpage() {
     const [states, setStates] = useState([])
     const [breeds, setBreeds] = useState([])
     const params = useParams()
-    const reduxState = useSelector(({ reducer }) => reducer)
+    const reduxState = useSelector(({reducer}) => reducer)
 
     useEffect(() => {
         axios
@@ -50,18 +50,18 @@ function Userpage() {
             .catch((error) => console.log(error))
     }
     const handleChange = (e) => {
-        const { name, value } = e.target
-        setUserpage({ ...userpage, [name]: value })
+        const {name, value} = e.target
+        setUserpage({...userpage, [name]: value})
     }
 
-    const updateUserpage = ({ data }) => {
+    const updateUserpage = ({data}) => {
         // console.log(data)
-        const { breed_id, breed_name, state_id, state_name, region_code } = data
+        const {breed_id, breed_name, state_id, state_name, region_code} = data
         setUserpage(data)
-        setBreed({ breed_id, breed_name })
-        setState({ state_id, state_name, region_code })
+        setBreed({breed_id, breed_name})
+        setState({state_id, state_name, region_code})
     }
-    // console.log(userpage,'userpage data')
+    console.log(userpage, 'userpage data')
     return (
         <div className="Userpage">
             <div>
@@ -70,14 +70,14 @@ function Userpage() {
                         {/*editing input fields*/}
                         <div className="editKennel">
                             <div className='edit-name'>
-                            <span>Kennel Name: </span>
-                            <input
-                                name="kennel_name"
-                                value={userpage.kennel_name}
-                                onChange={(e) =>
-                                    setUserpage({ ...userpage, kennel_name: e.target.value })
-                                }
-                            />
+                                <span>Kennel Name: </span>
+                                <input
+                                    name="kennel_name"
+                                    value={userpage.kennel_name}
+                                    onChange={(e) =>
+                                        setUserpage({...userpage, kennel_name: e.target.value})
+                                    }
+                                />
                             </div>
                             <br/>
                             <div className='edit-breed'>
@@ -85,28 +85,28 @@ function Userpage() {
                                 (Sorry, we can only do one breed per
                 profile at this time!):{" "}
               </span>
-                            {breeds.length > 0 && (
-                                <select
-                                    className="breed"
-                                    name="breed"
-                                    value={breed.breed_id}
-                                    onChange={(e) => {
-                                        setBreed(
-                                            breeds.find(
-                                            (b) => +b.breed_id === +e.target.value
-                                        ))
-                                    }}
-                                >
-                                    {breeds.map((breed) => (
-                                        <option
-                                            value={breed.breed_id}
-                                            key={`${breed.breed_id} ${breed.breed_name}`}
-                                        >
-                                            {breed.breed_name}
-                                        </option>
-                                    ))}
-                                </select>
-                            )}
+                                {breeds.length > 0 && (
+                                    <select
+                                        className="breed"
+                                        name="breed"
+                                        value={breed.breed_id}
+                                        onChange={(e) => {
+                                            setBreed(
+                                                breeds.find(
+                                                    (b) => +b.breed_id === +e.target.value
+                                                ))
+                                        }}
+                                    >
+                                        {breeds.map((breed) => (
+                                            <option
+                                                value={breed.breed_id}
+                                                key={`${breed.breed_id} ${breed.breed_name}`}
+                                            >
+                                                {breed.breed_name}
+                                            </option>
+                                        ))}
+                                    </select>
+                                )}
                             </div>
                             <br/>
                             <span> Current State : </span>
@@ -156,19 +156,46 @@ function Userpage() {
                                         type='checkbox'
                                         name='registered_dogs'
                                         checked={userpage.registered_dogs}
-                                        onChange={() => setUserpage({...userpage, registered_dogs: !userpage.registered_dogs})}/>
+                                        onChange={() => setUserpage({
+                                            ...userpage,
+                                            registered_dogs: !userpage.registered_dogs
+                                        })}/>
                                     <label htmlFor='registered_dogs'> Yes </label></li>
-                                {userpage.registered_dogs &&(
+                                {userpage.registered_dogs && (
                                     <div>
-                                    <span> With what registries? </span>
+                                        <span> With what registries? </span>
+                                        <input
+                                            name='registry'
+                                            value={userpage.registry}
+                                            onChange={handleChange}/>
+                                    </div>)}
+                                <li> Facebook Link :
                                     <input
-                                        name='registry'
-                                        value={userpage.registry}
-                                        onChange={handleChange} />
-                                        </div>)}
+                                        name='facebook'
+                                        value={userpage.facebook}
+                                        onChange={handleChange}
+                                    /></li>
+                                <li> Instagram Link :
+                                    <input
+                                        name='instagram'
+                                        value={userpage.instagram}
+                                        onChange={handleChange}
+                                    /></li>
+                                <li> Twitter Link :
+                                    <input
+                                        name='twitter'
+                                        value={userpage.twitter}
+                                        onChange={handleChange}
+                                    /></li>
+                                <li> Website Link :
+                                    <input
+                                        name='website'
+                                        value={userpage.website}
+                                        onChange={handleChange}
+                                    /></li>
                             </ul>
                             <p>
-                            <button onClick={() => saveData()}>Save</button>
+                                <button onClick={() => saveData()}>Save</button>
                             </p>
                         </div>
                     </div>
@@ -182,11 +209,11 @@ function Userpage() {
                             <div className="kennel-text">
                                 <h2>{userpage.kennel_name}</h2>
                                 <div> Our breed is the: {userpage.breed_name}</div>
-                                <br />
+                                <br/>
                                 <div>
                                     {" "}
                                     About us:
-                                    <br />
+                                    <br/>
                                     <span>{userpage.user_bio} </span>
                                 </div>
                                 <ul>
@@ -222,9 +249,9 @@ function Userpage() {
                                     </div>
                                     <div className="social-media">
                                         <span> Find us here: </span>
-                                        <br />
+                                        <br/>
                                         {userpage.website ? (
-                                            <a href={userpage.website}>
+                                            <a href={userpage.website} >
                                                 <img
                                                     className="website-icon"
                                                     src={websiteIcon}
@@ -234,12 +261,12 @@ function Userpage() {
                                         ) : null}
                                         {userpage.facebook ? (
                                             <a href={userpage.facebook}>
-                                                <img className="fb-icon" src={fbIcon} alt="fb-icon" />
+                                                <img className="fb-icon" src={fbIcon} alt="fb-icon"/>
                                             </a>
                                         ) : null}
                                         {userpage.instagram ? (
                                             <a href={userpage.instagram}>
-                                                <img className="ig-icon" src={igIcon} alt="ig-icon" />
+                                                <img className="ig-icon" src={igIcon} alt="ig-icon"/>
                                             </a>
                                         ) : null}
                                         {userpage.twitter ? (
