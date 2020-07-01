@@ -6,7 +6,7 @@ module.exports = {
 
         db.get_user_kennel(+user_id)
             .then((results) => {
-                console.log(results,"these are the results!")
+                // console.log(results,"these are the results!")
                 delete results[0].password
                 res.status(200).send(results[0])
 
