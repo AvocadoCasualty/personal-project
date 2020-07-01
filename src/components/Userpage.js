@@ -39,7 +39,7 @@ function Userpage() {
 
     const saveData = () => {
         setEditing(false)
-        console.log(userpage)
+        // console.log(userpage)
         axios
             .put(`/api/${userpage.kennel_id}`, {
                 ...userpage,
@@ -116,7 +116,7 @@ function Userpage() {
                                     name="state"
                                     value={state.state_id}
                                     onChange={(e) => {
-                                        console.log(e.target.value)
+                                        // console.log(e.target.value)
                                         const s = states.find(
                                             (s) => +s.state_id === +e.target.value
                                         )
