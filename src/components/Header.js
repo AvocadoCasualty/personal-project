@@ -7,7 +7,6 @@ import Login from "./Login";
 import axios from 'axios';
 import {loginUser} from "../redux/reducer";
 import {useHistory} from 'react-router-dom';
-import {FaBeer, GiHamburgerMenu} from "react-icons/all";
 
 
 function Header() {

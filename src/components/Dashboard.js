@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios'
-import bgimage from "../icons/gerrie-van-der-walt-CEeuWI58JeI-unsplash.jpg";
 import {useDispatch, useSelector} from "react-redux";
 import {setBreeds, setSelectedBreed, setStates, setSelectedState} from "../redux/secondReducer";
 import {useHistory} from 'react-router-dom'

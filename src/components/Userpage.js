@@ -177,7 +177,7 @@ function Userpage() {
                         {/*display user data*/}
                         <div className="kennel-info" key={userpage.kennel_id}>
                             <div className="kennel-pic">
-                                <img src={userpage.profile_pic} />
+                                <img src={userpage.profile_pic} alt='profile_pic'/>
                             </div>
                             <div className="kennel-text">
                                 <h2>{userpage.kennel_name}</h2>
