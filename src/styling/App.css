@@ -125,7 +125,9 @@ h2 {
   .user-div-desktop {
     display: flex;
     align-items: flex-start;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    padding-right: 20px;
+    margin: 10px; }
   .mobile-header {
     display: none; } }
 
