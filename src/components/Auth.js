@@ -34,7 +34,7 @@ function Auth() {
                            onChange={(e) => setUsername(e.target.value)}/>
                     <br/>
                     <p>Password:</p>
-                    <input placeholder='password' name='password' value={password}
+                    <input  type='password' placeholder='password' name='password' value={password}
                            onChange={(e) => setPassword(e.target.value)}/>
                     <br/>
                     <p>E-Mail:</p>
