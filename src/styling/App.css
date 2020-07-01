@@ -122,6 +122,11 @@ h2 {
     margin: 4px; }
   h2 {
     font-size: 32px; }
+  .login-div {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 10px; }
   .user-div-desktop {
     display: flex;
     align-items: flex-start;

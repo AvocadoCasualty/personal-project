@@ -79,6 +79,12 @@ h2 {
     .Login {
 
     }
+    .login-div {
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        padding: 10px;
+    }
     .user-div-desktop {
         display: flex;
         align-items: flex-start;

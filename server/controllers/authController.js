@@ -1,5 +1,6 @@
 const bcrypt = require('bcrypt')
 
+
 module.exports = {
     register: async (req, res) => {
         const db = req.app.get('db');
@@ -19,7 +20,7 @@ module.exports = {
         const sendEmail = {
             from: 'SomewhereImportant@totallylegit.com',
             to:email, subject:'Welcome to Reputable Rover Resource',
-            html:''
+            html: "Welcome to Reputable Rover Resource"
         }
         transporter.sendMail( sendEmail ,(error, data) => {
             if(error) {
