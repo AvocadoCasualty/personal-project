@@ -2,7 +2,6 @@
 .kennel-info {
   font-size: 20px;
 }
-
 .kennel-pic {
   height: 200px;
   img {
@@ -33,13 +32,13 @@
 
 //Edit
 .editKennel {
-  width: 700px;
-  padding: 50px 50px 0px;
+  width: 300px;
+  padding: 20px 30px 0px;
   font-size: 20px;
   text-align: left;
 
   div {
-    padding: 10px;
+    padding: 2px;
   }
 
   p {
@@ -47,7 +46,6 @@
     margin: 0px;
   }
 }
-
 .edit-name {
 
 }
@@ -59,7 +57,6 @@
     justify-content: center;
     flex-wrap: wrap;
   }
-
   .kennel-info {
     display: flex;
     align-items: center;
@@ -82,6 +79,21 @@
     text-align: left;
     padding: 30px;
     margin: 20px;
+  }
+  .editKennel {
+    width: 700px;
+    padding: 50px 50px 0px;
+    font-size: 20px;
+    text-align: left;
+
+    div {
+      padding: 10px;
+    }
+
+    p {
+      text-align: center;
+      margin: 0px;
+    }
   }
 
 }

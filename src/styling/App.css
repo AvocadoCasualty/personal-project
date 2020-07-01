@@ -217,12 +217,12 @@ h2 {
   padding: 20px; }
 
 .editKennel {
-  width: 700px;
-  padding: 50px 50px 0px;
+  width: 300px;
+  padding: 20px 30px 0px;
   font-size: 20px;
   text-align: left; }
   .editKennel div {
-    padding: 10px; }
+    padding: 2px; }
   .editKennel p {
     text-align: center;
     margin: 0px; }
@@ -251,7 +251,17 @@ h2 {
     width: 700px;
     text-align: left;
     padding: 30px;
-    margin: 20px; } }
+    margin: 20px; }
+  .editKennel {
+    width: 700px;
+    padding: 50px 50px 0px;
+    font-size: 20px;
+    text-align: left; }
+    .editKennel div {
+      padding: 10px; }
+    .editKennel p {
+      text-align: center;
+      margin: 0px; } }
 
 /*end media query*/
 /*End desktop only styles*/
