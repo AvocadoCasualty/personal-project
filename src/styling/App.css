@@ -100,7 +100,8 @@ h2 {
 .login-div {
   display: flex;
   align-items: flex-start;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  padding: 10px; }
 
 .desktop-header {
   display: none; }
