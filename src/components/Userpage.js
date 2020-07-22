@@ -61,7 +61,7 @@ function Userpage() {
         setBreed({breed_id, breed_name})
         setState({state_id, state_name, region_code})
     }
-    console.log(userpage, 'userpage data')
+    // console.log(userpage, 'userpage data')
     return (
         <div className="Userpage">
             <div>
@@ -169,6 +169,16 @@ function Userpage() {
                                             value={userpage.registry}
                                             onChange={handleChange}/>
                                     </div>)}
+                                <li>Are your dogs the working variation of the breed?
+                                    <input
+                                        type='checkbox'
+                                        name='working_variation'
+                                        checked={userpage.working_variation}
+                                        onChange={() => setUserpage({
+                                            ...userpage,
+                                            working_variation: !userpage.working_variation
+                                        })}/>
+                                    <label htmlFor='working_variation'> Yes </label></li>
                                 <li> Facebook Link :
                                     <input
                                         name='facebook'
@@ -251,7 +261,7 @@ function Userpage() {
                                         <span> Find us here: </span>
                                         <br/>
                                         {userpage.website ? (
-                                            <a href={userpage.website} >
+                                            <a target="_blank" href={userpage.website} >
                                                 <img
                                                     className="website-icon"
                                                     src={websiteIcon}
@@ -260,17 +270,17 @@ function Userpage() {
                                             </a>
                                         ) : null}
                                         {userpage.facebook ? (
-                                            <a href={userpage.facebook}>
+                                            <a target="_blank" href={userpage.facebook}>
                                                 <img className="fb-icon" src={fbIcon} alt="fb-icon"/>
                                             </a>
                                         ) : null}
                                         {userpage.instagram ? (
-                                            <a href={userpage.instagram}>
+                                            <a target="_blank" href={userpage.instagram}>
                                                 <img className="ig-icon" src={igIcon} alt="ig-icon"/>
                                             </a>
                                         ) : null}
                                         {userpage.twitter ? (
-                                            <a href={userpage.twitter}>
+                                            <a target="_blank" href={userpage.twitter}>
                                                 <img
                                                     className="twitter-icon"
                                                     src={twitterIcon}

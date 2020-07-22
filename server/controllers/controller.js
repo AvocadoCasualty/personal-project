@@ -8,6 +8,18 @@ module.exports = {
             .then((results) => {
                 // console.log(results,"these are the results!")
                 delete results[0].password
+
+                const httpCleaner = (link) => {
+                    let regex = /^https?:\/\//
+                    if (link && !regex.test(link)) {
+                        link = 'http://' + link
+                    }
+                    return link
+                }
+                results[0].facebook = httpCleaner(results[0].facebook)
+                results[0].twitter = httpCleaner(results[0].twitter)
+                results[0].instagram = httpCleaner(results[0].instagram)
+                results[0].website = httpCleaner(results[0].website)
                 res.status(200).send(results[0])
 
             })
